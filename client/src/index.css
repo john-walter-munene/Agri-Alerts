@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Sky/meadow palette: emerald primary (crop/grow), amber accent (sun),
+       sky-blue for "calm" severity, canonical red for urgent. */
+    --background: 210 40% 99%;
+    --foreground: 222.2 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47% 11%;
+    --primary: 158 64% 32%; /* emerald-700 — deeper than before for contrast on white */
+    --primary-foreground: 144 80% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 38 92% 50%; /* amber-500 — sun warmth */
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --info: 199 89% 48%; /* sky-500 — calm-weather indicator */
+    --info-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 158 64% 32%;
+    --radius: 0.625rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100vh;
+  }
+
+  body {
+    @apply text-foreground;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    margin: 0;
+    /* Layered atmospheric gradient: sky -> meadow -> warm horizon.
+       `fixed` so the gradient stays put on long pages. */
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, hsl(199 90% 92% / 0.55), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 100% 100%, hsl(38 95% 88% / 0.45), transparent 60%),
+      linear-gradient(180deg, hsl(210 50% 98%) 0%, hsl(150 30% 96%) 60%, hsl(45 50% 96%) 100%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  /* Subtle card lift on hover — applies to anything tagged .card-lift. */
+  .card-lift {
+    @apply transition-shadow duration-200 hover:shadow-md;
+  }
+
+  /* Frosted glass surface for nav / hero panels. */
+  .glass {
+    background-color: hsl(0 0% 100% / 0.7);
+    backdrop-filter: saturate(150%) blur(8px);
+    -webkit-backdrop-filter: saturate(150%) blur(8px);
+  }
+}

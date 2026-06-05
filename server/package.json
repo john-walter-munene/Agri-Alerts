@@ -1,0 +1,35 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --watch app.js",
+    "build": "echo \"no build step for JavaScript\"",
+    "start": "node app.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:seed": "prisma db seed",
+    "test": "node --test test/alerts.test.js test/alerts.persistence.test.js test/weather.test.js",
+    "lint": "eslint ."
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@prisma/client": "^6.18.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "eslint": "^9.39.1",
+    "prisma": "^6.18.0"
+  }
+}
