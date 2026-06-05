@@ -2,7 +2,8 @@
  * Resolved at build time from .env / env-vars on the deploy host.
  * Falls back to localhost so `npm run dev` works without a .env file.
  */
-const RAW_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+// const RAW_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+const RAW_BASE = import.meta.env.VITE_API_BASE_URL;
 export const API_BASE_URL = RAW_BASE.replace(/\/+$/, "");
 
 /**
