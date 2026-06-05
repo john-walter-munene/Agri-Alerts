@@ -1,0 +1,11 @@
+{
+  "remoteName": "origin",
+  "projects": [
+    {
+      "id": "prj_T3RbwGVg5zLCVsRRqmWWvlY60GCh",
+      "name": "agri-alerts-client-ymxl",
+      "directory": "client",
+      "orgId": "team_Dob3zPS8tWxZneHJXEYuy4bN"
+    }
+  ]
+}
